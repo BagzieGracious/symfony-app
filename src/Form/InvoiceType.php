@@ -15,7 +15,7 @@ class InvoiceType extends AbstractType
         $builder
             ->add('invoice_date', DateTimeType::class, [
                 'widget' => 'single_text',
-                'attr' => ['type' => 'date', 'class' => 'form-control', 'readonly' => true], // Set 'type' to 'date'
+                'attr' => ['type' => 'date', 'class' => 'form-control', ],
                 'html5' => true,
                 'data' => new \DateTime(),
             ])

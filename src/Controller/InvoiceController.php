@@ -53,7 +53,7 @@ class InvoiceController extends AbstractController
         $invoice = $this->invoiceRepository->find($id);
 
         if (!$invoice) {
-            return $this->render('404.html.twig');
+            return $this->render('404.html.twig', ['message' => 'Invoice Not found']);
         }
 
         return $this->render('invoice/show.html.twig', [
@@ -66,7 +66,7 @@ class InvoiceController extends AbstractController
         $invoice = $this->invoiceRepository->find($id);
 
         if (!$invoice) {
-            return $this->render('404.html.twig');
+            return $this->render('404.html.twig', ['message' => 'Invoice Not found']);
         }
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->remove($invoice);
