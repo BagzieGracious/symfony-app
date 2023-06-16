@@ -6,13 +6,19 @@ use App\Entity\Invoice;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class InvoiceType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('invoice_date')
+            ->add('invoice_date', DateTimeType::class, [
+                'widget' => 'single_text',
+                'attr' => ['type' => 'datetime-local', 'class' => 'form-control', 'readonly' => true],
+                'html5' => true,
+                'data' => new \DateTime(),
+            ])
             ->add('invoice_number')
             ->add('customer_id')
         ;

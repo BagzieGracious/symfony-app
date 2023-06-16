@@ -26,4 +26,14 @@
             {{ form_end(form) }}
         </div>
     </div>
+<script>
+    window.addEventListener('load', () => {
+        var now = new Date();
+        now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+        now.setMilliseconds(null);
+        now.setSeconds(null);
+        document.getElementById('invoice_invoice_date').value = now.toISOString().slice(0, -1);
+    })
+</script>
 {% endblock %}
+

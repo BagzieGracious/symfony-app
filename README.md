@@ -13,7 +13,7 @@ This is a Symfony project for managing invoices and invoice lines.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/symfony-project.git
+   git clone git@github.com:BagzieGracious/symfony-app.git
 
 2. Install the dependencies:
     ```bash

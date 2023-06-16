@@ -1,5 +1,4 @@
 {% extends 'base.html.twig' %}
-
 {% block title %}Invoice Details{% endblock %}
 
 {% block body %}
@@ -48,6 +47,10 @@
                             <td>{{ invoiceLine.amount }}</td>
                             <td>{{ invoiceLine.VATAmount }}</td>
                             <td>{{ invoiceLine.totalWithVAT }}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center">No invoice line items found.</td>
                         </tr>
                     {% endfor %}
                 </tbody>
