@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %}Invoices{% endblock %}
+
+{% block body %}
+    <h1>Invoices</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Invoice Number</th>
+                <th>Invoice Date</th>
+                <th>Customer ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for invoice in invoices %}
+                <tr>
+                    <td>{{ invoice.invoiceNumber }}</td>
+                    <td>{{ invoice.invoiceDate|date }}</td>
+                    <td>{{ invoice.customerId }}</td>
+                    <td>
+                        <a href="{{ path('invoice_show', {'id': invoice.id}) }}" class="btn btn-primary">View</a>
+                        <a href="{{ path('invoice_delete', {'id': invoice.id}) }}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">No invoices found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

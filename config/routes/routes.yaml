@@ -1,0 +1,23 @@
+invoice_default:
+  path: /
+  controller: App\Controller\InvoiceController::default
+
+invoice_new:
+  path: /invoices/new
+  controller: App\Controller\InvoiceController::create
+
+invoice_index:
+  path: /invoices
+  controller: App\Controller\InvoiceController::index
+
+invoice_show:
+  path: /invoices/{id}
+  controller: App\Controller\InvoiceController::show
+
+invoice_delete:
+  path: /invoices/{id}/delete
+  controller: App\Controller\InvoiceController::delete
+
+invoiceline_new:
+  path: /invoices/{id}/lines/new
+  controller: App\Controller\InvoiceLineController::create

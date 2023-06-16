@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Invoice Details{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Invoice Details</h1>
+
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Invoice ID:</th>
+                        <td>{{ invoice.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Invoice Date:</th>
+                        <td>{{ invoice.invoiceDate|date }}</td>
+                    </tr>
+                    <tr>
+                        <th>Invoice Number:</th>
+                        <td>{{ invoice.invoiceNumber }}</td>
+                    </tr>
+                    <tr>
+                        <th>Customer ID:</th>
+                        <td>{{ invoice.customerId }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Invoice Lines</h2>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                        <th>VAT Amount</th>
+                        <th>Total with VAT</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for invoiceLine in invoice.invoiceLines %}
+                        <tr>
+                            <td>{{ invoiceLine.description }}</td>
+                            <td>{{ invoiceLine.quantity }}</td>
+                            <td>{{ invoiceLine.amount }}</td>
+                            <td>{{ invoiceLine.VATAmount }}</td>
+                            <td>{{ invoiceLine.totalWithVAT }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

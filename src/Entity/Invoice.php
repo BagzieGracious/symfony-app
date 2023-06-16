@@ -33,6 +33,11 @@ class Invoice
         $this->invoiceLines = new ArrayCollection();
     }
 
+    public function __tostring()
+    {
+        return $this->id;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
