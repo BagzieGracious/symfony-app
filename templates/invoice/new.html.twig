@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Create Invoice{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">Create Invoice</h1>
+
+            {{ form_start(form, {'attr': {'class': 'form'}}) }}
+                <div class="form-group">
+                    {{ form_label(form.invoice_date, 'Invoice Date') }}
+                    {{ form_widget(form.invoice_date, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.invoice_number, 'Invoice Number') }}
+                    {{ form_widget(form.invoice_number, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.customer_id, 'Customer ID') }}
+                    {{ form_widget(form.customer_id, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <button type="submit" class="btn btn-primary">Create Invoice</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
